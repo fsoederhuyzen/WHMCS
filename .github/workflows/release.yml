@@ -16,8 +16,15 @@ jobs:
         with:
           type: 'zip'
           filename: 'release.zip'
+      - name: Generate checksum
+        uses: jmgilman/actions-generate-checksum@v1
+        with:
+          patterns: |
+            release.zip
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
           generate_release_notes: true
-          files: "release.zip"
+          files: |
+            checksums.txt
+            release.zip
