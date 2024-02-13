@@ -18,3 +18,5 @@ jobs:
           filename: 'release.zip'
       - name: Release
         uses: softprops/action-gh-release@v1
+        with:
+          artifacts: "release.zip"
