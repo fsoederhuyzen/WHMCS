@@ -16,6 +16,8 @@ jobs:
         with:
           type: 'zip'
           filename: 'release.zip'
+          exclusions: |
+            *.git*
       - name: Generate checksum
         uses: jmgilman/actions-generate-checksum@v1
         with:
